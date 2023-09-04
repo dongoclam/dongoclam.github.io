@@ -1,0 +1,17 @@
+title: dnlblog
+google_analytics: true
+theme: jekyll-theme-cayman
+permalink: /:title:output_ext
+plugins:
+  - jekyll-toc
+toc:
+  min_level: 1
+  max_level: 3
+defaults:
+  - scope:
+      path: ""
+    values:
+      toc: true
+collections:
+  tags:
+    output: true

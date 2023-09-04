@@ -1,0 +1,9 @@
+<div class="category" data-id="{{ category | first }}">
+  <h2 class="category-title">
+    <span>{{ category | first }}</span>
+    <span class="post-count">{{ category.last | size }}</span>
+  </h2>
+  {% for post in category.last %}
+    {% include partials/post.html %}
+  {% endfor %}
+</div>
