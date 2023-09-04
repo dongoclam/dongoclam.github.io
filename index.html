@@ -1,0 +1,11 @@
+---
+layout: home
+---
+
+<div class="home-page">
+  <div class="home-posts">
+    {% for post in site.posts %}
+      {% include partials/post.html %}
+    {% endfor %}
+  </div>
+</div>

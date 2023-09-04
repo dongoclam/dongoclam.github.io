@@ -1,0 +1,22 @@
+---
+layout: page
+---
+
+<div class="search-page">
+  <div class="search-box">
+    <img src="/assets/image/search.svg" alt="search">
+    <input id="search-input" type="text" placeholder="Search...">
+  </div>
+  <div id="posts" class="hidden search-results">
+    {% for post in site.posts %}
+      {% include partials/post.html %}
+    {% endfor %}
+    <div class="no-result-found hidden">
+      <img src="assets/image/no-result-found.svg" alt="no-result-found"/>
+      <p>No results</p>
+    </div>
+  </div>
+</div>
+
+<script>window.collections = {{ site.data["collections"] | jsonify }}</script>
+<script src="assets/javascript/search.js"></script>

@@ -1,0 +1,457 @@
+@import url('https://fonts.cdnfonts.com/css/source-sans-pro');
+
+@mixin extra-extra-large {
+  @media screen and (min-width: #{$xxl}) {
+    @content;
+  }
+}
+
+@mixin extra-large {
+  @media screen and (min-width: #{$xl}) and (max-width: #{$xxl}) {
+    @content;
+  }
+}
+
+@mixin large {
+  @media screen and (min-width: #{$lg}) and (max-width: #{$xl}) {
+    @content;
+  }
+}
+
+@mixin medium {
+  @media screen and (min-width: #{$md}) and (max-width: #{$lg}) {
+    @content;
+  }
+}
+
+@mixin small {
+  @media screen and (max-width: #{$md}) {
+    @content;
+  }
+}
+
+@mixin text-truncate {
+  overflow: hidden;
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+}
+
+@mixin line-clamp-1 {
+  -webkit-line-clamp: 1;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: $body-text-color;
+  background: $page-bg-color;
+}
+
+a {
+  color: $body-link-color;
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.btn {
+  display: inline-block;
+  padding: 8px 15px;
+  font-size: 14px;
+  border-radius: 3px;
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+.header {
+  position: fixed;
+  width: 100%;
+  height: 60px;
+  background-color: #ffffff;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  .menu {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin: auto;
+    height: 100%;
+    .nav-item {
+      list-style: none;
+      padding: 0 10px;
+      &:last-child {
+        padding-right: 0;
+      }
+      .nav-link {
+        color: $body-text-color;
+        &.search-link {
+          display: inline-block;
+          padding-top: 2px;
+          img {
+            height: 15px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.main {
+  margin: 70px 0;
+  word-wrap: break-word;
+  background: $page-bg-color;
+  display: flex;
+  justify-content: space-between;
+  kbd {
+    background-color: #fafbfc;
+    border: 1px solid #c6cbd1;
+    border-bottom-color: #959da5;
+    border-radius: 3px;
+    box-shadow: inset 0 -1px 0 #959da5;
+    color: #444d56;
+    display: inline-block;
+    font-size: 11px;
+    line-height: 10px;
+    padding: 3px 5px;
+    vertical-align: middle;
+  }
+  img {
+    max-width: 100%;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    font-weight: normal;
+    color: $heading-text-color;
+    code {
+      font-size: 0.9em;
+    }
+  }
+  p {
+    margin-bottom: 1em;
+  }
+  code {
+    padding: 2px 4px;
+    font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+    color: $code-text-color;
+    background-color: $code-bg-color;
+    font-size: 0.85em;
+    border-radius: 0.3rem;
+  }
+  pre {
+    padding: 0.8rem;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font: 1rem Consolas, "Liberation Mono", Menlo, Courier, monospace;
+    color: $code-text-color;
+    word-wrap: normal;
+    background-color: $code-bg-color;
+    border-radius: 0.3rem;
+
+    > code {
+      padding: 0;
+      margin: 0;
+      font-size: 0.9em;
+      color: $code-text-color;
+      word-break: normal;
+      white-space: pre;
+      background: transparent;
+      border: 0;
+    }
+  }
+  .highlight {
+    margin-bottom: 1rem;
+    border-radius: 10px;
+
+    pre {
+      margin-bottom: 0;
+      word-break: normal;
+    }
+  }
+  .highlight pre,
+  pre {
+    padding: 15px 25px;
+    overflow: auto;
+    font-size: 0.9em;
+    line-height: 1.45;
+    -webkit-overflow-scrolling: touch;
+  }
+  pre code,
+  pre tt {
+    display: inline;
+    max-width: initial;
+    padding: 0;
+    margin: 0;
+    overflow: initial;
+    line-height: inherit;
+    word-wrap: normal;
+    background-color: transparent;
+    border: 0;
+
+    &:before,
+    &:after {
+      content: normal;
+    }
+  }
+  ul,
+  ol {
+    margin-top: 0;
+  }
+  blockquote {
+    padding: 0 1rem;
+    margin-left: 0;
+    color: $blockquote-text-color;
+    border-left: 0.3rem solid $border-color;
+    > :first-child {
+      margin-top: 0;
+    }
+    > :last-child {
+      margin-bottom: 0;
+    }
+  }
+  table {
+    display: inline-block;
+    overflow: auto;
+    word-break: keep-all;
+    -webkit-overflow-scrolling: touch;
+    border: 1px solid $table-border-color;
+    border-radius: 15px;
+    max-width: 100%;
+    thead {
+      border-bottom: 1px solid $table-border-color;
+    }
+    tr {
+      border-bottom: 1px solid $table-border-color;
+      &:last-child {
+        border: none;
+      }
+      th {
+        font-weight: 600;
+        background-color: $table-header-bg-color;
+      }
+      th,
+      td {
+        text-align: left;
+        padding: 1rem;
+      }
+    }
+  }
+  dl {
+    padding: 0;
+    dt {
+      padding: 0;
+      margin-top: 1rem;
+      font-size: 1rem;
+      font-weight: bold;
+    }
+    dd {
+      padding: 0;
+      margin-bottom: 1rem;
+    }
+  }
+  hr {
+    height: 2px;
+    padding: 0;
+    margin: 1rem 0;
+    background-color: $hr-border-color;
+    border: 0;
+  }
+}
+
+.sidebar {
+  width: 220px;
+  height: 100%;
+  position: sticky;
+  top: 20px;
+  background-color: $content-bg-color;
+  .user {
+    width: 100%;
+    margin-top: 60px;
+    .user-avatar {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+    }
+    .user-name {
+      display: block;
+      font-size: 1.5rem;
+      line-height: 25px;
+      font-weight: 600;
+    }
+    .user-memo {
+      text-align: left;
+      font-size: 0.9em;
+      color: $light-text-color;
+      margin-top: 8px;
+      display: block;
+    }
+    .social {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      max-width: 300px;
+      margin-top: 20px;
+      a {
+        display: flex;
+        padding: 10px;
+        color: $body-text-color;
+        text-decoration: underline;
+        align-items: baseline;
+        height: 30px;
+        margin-bottom: 20px;
+        img {
+          margin-top: auto;
+          margin-right: 8px;
+          &.email {
+            height: 18px;
+          }
+          &.linkedin {
+            width: 16px;
+            height: 16px;
+          }
+          &.github {
+            width: 16px;
+            height: 16px;
+          }
+        }
+        span {
+          line-height: 16px;
+          margin-top: 1px;
+        }
+      }
+    }
+  }
+}
+
+.container {
+  min-height: calc(100vh - 160px);
+  .page-content {
+    width: calc(100% - 250px);
+  }
+}
+
+.site-footer {
+  padding: 2rem;
+  border-top: solid 1px $hr-border-color;
+  display: flex;
+  text-align: center;
+  height: 80px;
+  .github-link {
+    margin: auto;
+    display: flex;
+    text-decoration: none;
+    align-items: center;
+    color: $body-text-color;
+    span {
+      margin-right: 5px;
+    }
+    img {
+      width: 16px;
+      height: 16px;
+    }
+  }
+}
+
+@include extra-extra-large {
+  .container,
+  .header {
+    padding: 0 10rem;
+  }
+}
+
+@include extra-large {
+  .container,
+  .header {
+    padding: 0 8rem;
+  }
+}
+
+@include large {
+  .container,
+  .header {
+    padding: 0 6rem;
+  }
+  .site-footer {
+    font-size: 1rem;
+  }
+}
+
+@include medium {
+  .container,
+  .header {
+    padding: 0 4rem;
+  }
+  .container {
+    .main {
+      font-size: 0.9rem;
+    }
+  }
+  .site-footer {
+    font-size: 1rem;
+  }
+}
+
+@include small {
+  .container,
+  .header {
+    padding: 0 2rem;
+  }
+  .container {
+    .main {
+      flex-direction: column;
+      font-size: 0.9rem;
+    }
+    .sidebar {
+      position: relative;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      .user {
+        text-align: center;
+        .user-memo {
+          font-size: 0.9em;
+        }
+      }
+      .social {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        margin: 20px auto;
+        justify-content: space-between;
+      }
+    }
+    .page-content {
+      width: 100%;
+    }
+  }
+  .layout-page {
+    .sidebar {
+      .user {
+        display: none;
+      }
+    }
+  }
+  .site-footer {
+    font-size: 0.9rem;
+  }
+}

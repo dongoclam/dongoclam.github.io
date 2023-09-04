@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: "en-US" }}">
+  <head>
+    {% include metadata.html %}
+  </head>
+  <body>
+    {% include noscript.html %}
+    <div class="container layout-{{ layout.name }}">
+      {% include header.html %}
+      <main id="content" class="main" role="main">
+        {% include sidebar.html %}
+        <div class="page-content">
+          {{ content }}
+        </div>
+      </main>
+    </div>
+    <footer class="site-footer">
+      {% include footer.html %}
+    </footer>
+    <script src="/assets/javascript/main.js"></script>
+  </body>
+</html>

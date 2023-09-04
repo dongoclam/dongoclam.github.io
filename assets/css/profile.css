@@ -1,0 +1,161 @@
+body {
+  background-color: #f9f9f9;
+  font-family: "Raleway", Helvetica, Arial, sans-serif;
+  color: #4a454b;
+  margin: 0;
+}
+.main {
+  background-color: #ffffff;
+  width: 850px;
+  margin: auto;
+}
+@media screen and (max-width: 850px) {
+  .main {
+    width: 100%;
+  }
+}
+.main {
+  display: flex;
+  justify-content: center;
+  padding: 30px;
+}
+.sidebar {
+  width: 250px;
+}
+.content {
+  width: 420px;
+  margin-left: 50px;
+}
+.avatar {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  margin-bottom: 50px;
+}
+.contact {
+  display: flex;
+  flex-direction: column;
+}
+.contact div {
+  overflow: hidden;
+  position: relative;;
+  margin-bottom: 30px;
+  height: 20px;
+}
+.contact div .text {
+  padding-left: 50px;
+  font-size: 15px;
+}
+.contact img {
+  width: 20px;
+  position: absolute;
+}
+.contact .phone img {
+  top: -2px;
+}
+.contact .email img {
+  top: -22px;
+}
+.contact .blog img {
+  top: -42px;
+}
+.about-me {
+  font-size: 14px;
+  line-height: 25px;
+  font-weight: 300;
+}
+.skill {
+  margin-top: 50px;
+}
+.expertise {
+  margin-top: 52px;
+}
+.info .full-name {
+  font-family: "Roboto Condensed";
+  text-transform: uppercase;
+  font-size: 50px;
+  margin-bottom: 0;
+}
+.info .developer {
+  font-weight: 200;
+  font-size: 20px;
+  margin-top: 0;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #464a4e;
+}
+.work-experience {
+  margin-top: 60px;
+}
+.work-experience .work {
+  border-left: 1px solid #323b4c;
+  padding-left: 20px;
+  padding-bottom: 30px;
+}
+.work-experience .work:last-child {
+  padding-bottom: 0;
+}
+.work-experience .work .time,
+.work-experience .work .project,
+.work-experience .work .work-content {
+  font-weight: 200;
+}
+.work-experience .work .time {
+  font-size: 14px;
+  position: relative;
+  margin-bottom: 5px;
+  margin-top: 0;
+  font-weight: 300;
+}
+.work-experience .work .time::before {
+  content: '';
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  border-radius: 50%;
+  border: 2px solid #323b4c;
+  left: -27.5px;
+  background-color: #fff;
+}
+.work-experience .work .position {
+  font-size: 17px;
+  font-weight: 600;
+  font-family: "Roboto Condensed";
+  margin: 0;
+}
+.work-experience .work .project {
+  font-size: 14px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+.work-experience .work .work-content {
+  font-size: 12px;
+  line-height: 20px;
+  padding-left: 13px;
+  margin-bottom: 0;
+}
+.work-experience .work .work-content li {
+  line-height: 20px;
+  margin-bottom: 8px;
+}
+.education {
+  margin-top: 53px;
+}
+.education .school .school-name {
+  font-size: 17px;
+  font-family: "Roboto Condensed";
+}
+.education .school .school-time {
+  font-size: 14px;
+  font-weight: 300;
+}
+.education .school .school-content {
+  font-size: 14px;
+  font-weight: 200;
+}
+.title {
+  font-family: "Roboto Condensed";
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 20px;
+  margin-bottom: 30px;
+}

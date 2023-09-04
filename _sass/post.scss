@@ -1,0 +1,242 @@
+.layout-post {
+  .header {
+    position: absolute;
+  }
+}
+
+.post-page {
+  background: $content-bg-color;
+  padding: 20px 0;
+  border-radius: 3px;
+  display: flex;
+  .post-content {
+    width: calc(100% - 220px);
+    font-size: 1.1rem;
+    .post-page-title {
+      font-size: 32px;
+      font-weight: 600;
+      margin-top: 0;
+      margin-bottom: 30px;
+    }
+    h2,
+    h3,
+    h4 {
+      font-weight: 600;
+      code {
+        font-weight: 600;
+      }
+    }
+    p {
+      img {
+        display: block;
+        margin: 2rem auto;
+      }
+    }
+    ul,
+    ol {
+      margin-top: 0;
+      li {
+        line-height: 2rem;
+      }
+    }
+  }
+  .post-tags {
+    margin-top: 30px;
+    .tag {
+      font-size: 0.9em;
+      margin-right: 5px;
+    }
+  }
+  .related-posts {
+    margin-top: 50px;
+    padding-top: 25px;
+    border-top: 1px solid $border-color;
+    >h3 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: $light-text-color;
+    }
+    .posts {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 20px;
+      .post {
+        width: 50%;
+        display: inline-block;
+        .post-title {
+          font-size: 1.2rem;
+          @include text-truncate;
+          @include line-clamp-1;
+        }
+        &:last-child {
+          margin-left: 15px;
+        }
+      }
+    }
+  }
+  .post-content-sections {
+    width: 200px;
+    margin-left: 50px;
+    max-height: calc(100vh - 60px);
+    position: sticky;
+    top: 185px;
+    transition: all 0.2s ease-in-out;
+    &.toc-scroll {
+      top: 60px;
+      .toc-entry {
+        &.toc-h2 {
+          ul {
+            max-height: 500px !important;
+          }
+        }
+      }
+    }
+    &.toc-bottom {
+      margin-bottom: 200px;
+    }
+    .section {
+      margin-bottom: 30px;
+      .section-nav {
+        padding: 10px 0;
+        .toc-entry {
+          font-size: 13px;
+          list-style: none;
+          margin-bottom: 2px;
+          &.toc-h2 {
+            > a {
+              padding-bottom: 5px;
+            }
+            ul {
+              max-height: 0;
+              transition: all 0.2s ease-in-out;
+            }
+          }
+          ul {
+            padding-left: 20px;
+            overflow-y: hidden;
+          }
+          a {
+            text-decoration: none;
+            color: $light-text-color;
+            padding: 2px 2px 2px 16px;
+            @include text-truncate;
+            @include line-clamp-1;
+            &:hover {
+              color: $body-text-color;
+            }
+            &.active {
+              font-weight: 600;
+              color: $body-text-color;
+              border-left: 2px solid $body-text-color;
+              padding-left: 14px;
+            }
+          }
+        }
+      }
+    }
+    #scrollToTop,
+    #scrollToBottom {
+      font-size: 12px;
+      display: block;
+      padding: 5px 0 0 20px;
+      cursor: pointer;
+      color: $light-text-color;
+
+      &:hover {
+        color: $body-text-color;
+      }
+    }
+  }
+}
+
+.post {
+  padding: 15px 20px;
+  margin-top: 30px;
+  border-radius: 6px;
+  background-color: $content-bg-color;
+  box-shadow: 0 .5em 1em -.125em $box-shadow-color, 0 0 0 1px rgba(10,10,10,.02);
+  &:hover {
+    box-shadow: 0 .5em 1em -.125em $box-shadow-color, 0 0 0 1px $box-shadow-color-highlight;
+  }
+  .content {
+    a {
+      text-decoration: none;
+      .post-title {
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin-top: 0;
+        margin-bottom: 0.6rem;
+      }
+      .post-description {
+        font-size: 1.05rem;
+        color: $description-text-color;
+        @include text-truncate;
+        @include line-clamp-1;
+      }
+    }
+  }
+}
+
+.post-info {
+  display: flex;
+  align-items: center;
+  .avatar {
+    width: 25px;
+    border-radius: 50%;
+    margin-right: 5px;
+    border: 2px solid $border-color;
+  }
+  .published-date {
+    color: $light-text-color;
+    font-size: 14px;
+    margin-top: 5px;
+  }
+}
+
+@include medium {
+  .layout-post {
+    .page-content {
+      width: 100%;
+      .post {
+        margin-top: 20px;
+      }
+    }
+    .sidebar {
+      display: none;
+    }
+  }
+}
+
+@include small {
+  .layout-post {
+    .page-content {
+      .post-page {
+        .post-content {
+          width: 100%;
+          h2 {
+            font-size: 1.6rem;
+          }
+          .related-posts {
+            .posts {
+              flex-direction: column;
+              .post {
+                width: 100%;
+                &:last-child {
+                  margin-left: 0;
+                  margin-top: 30px;
+                }
+              }
+            }
+          }
+        }
+        .post-content-sections {
+          display: none;
+        }
+      }
+    }
+    .sidebar {
+      display: none;
+    }
+  }
+}
