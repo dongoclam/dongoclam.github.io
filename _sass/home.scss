@@ -1,0 +1,24 @@
+@include medium {
+  .layout-home {
+    .nav-tabs {
+      margin-bottom: 20px;
+    }
+  }
+}
+
+@include small {
+  .layout-home {
+    .sidebar {
+      .user {
+        margin-top: 20px !important;
+        .user-memo {
+          display: inline-block;
+          max-width: 270px;
+          margin-left: auto;
+          margin-right: auto;
+          text-align: center !important;
+        }
+      }
+    }
+  }
+}

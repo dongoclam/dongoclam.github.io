@@ -1,0 +1,42 @@
+.tag-page {
+  .tag-content {
+    .tag-page-title {
+      display: flex;
+      align-items: center;
+      .tag-image {
+        height: 25px;
+        margin-right: 5px;
+      }
+    }
+    .posts {
+      .post {
+        .tags {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+.tags {
+  .tag {
+    font-size: 0.8rem;
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 3px;
+    text-decoration: none;
+    color: $tag-text-color;
+    background-color: $tag-bg-color;
+    margin-right: 3px;
+  }
+}
+
+@include small {
+  .layout-tag {
+    .sidebar {
+      .user {
+        display: none;
+      }
+    }
+  }
+}

@@ -1,0 +1,21 @@
+<nav class="sidebar">
+  <div class="user">
+    <img class="user-avatar" src="{{ site.data.user.avatar }}" alt="avatar">
+    <span class="user-name">{{ site.data.user.name }}</span>
+    <span class="user-memo">{{ site.data.user.memo }}</span>
+    <div class="social">
+      <a href="{{ site.data.user.email_url }}" target="_blank">
+        <img class="email" src="/assets/image/email.svg" alt="linkedin">
+        <span>Email</span>
+      </a>
+      <a href="{{ site.data.user.linkedin_url }}" target="_blank">
+        <img class="linkedin" src="/assets/image/linkedin.svg" alt="linkedin">
+        <span>LinkedIn</span>
+      </a>
+      <a href="{{ site.data.user.github_url }}" target="_blank">
+        <img class="github" src="/assets/image/github.png" alt="github">
+        <span>Github</span>
+      </a>
+    </div>
+  </div>
+</nav>
