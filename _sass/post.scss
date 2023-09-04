@@ -1,0 +1,245 @@
+.layout-post {
+  @include medium {
+    .post-page {
+      padding-left: 40px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .post-content {
+      width: 100% !important;
+    }
+    .post-content-sections {
+      display: none;
+    }
+  }
+
+  @include small {
+    .page-content {
+      padding: 20px 0;
+    }
+    .post-page {
+      padding: 30px;
+    }
+    .post-content {
+      width: 100%;
+      font-size: 1.2em;
+      h2 {
+        font-size: 1.6rem;
+      }
+      .related-posts {
+        .posts {
+          flex-direction: column;
+          .post {
+            width: 100%;
+            &:last-child {
+              margin-left: 0;
+              margin-top: 30px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.post-page {
+  background: $content-bg-color;
+  padding: 40px 60px;
+  border-radius: 3px;
+
+  .post-content {
+    width: calc(100% - 200px);
+    .post-page-title {
+      font-size: 32px;
+      font-weight: 600;
+      margin-top: 0;
+      margin-bottom: 30px;
+    }
+    h2,
+    h3,
+    h4 {
+      font-weight: 600;
+      code {
+        font-weight: 600;
+      }
+    }
+    p {
+      img {
+        display: block;
+        margin: 2rem auto;
+      }
+    }
+    ul,
+    ol {
+      margin-top: 0;
+      li {
+        line-height: 1.8rem;
+      }
+    }
+  }
+  .post-tags {
+    margin-top: 30px;
+    .tag {
+      font-size: 0.9em;
+      margin-right: 5px;
+    }
+  }
+  .related-posts {
+    margin-top: 50px;
+    padding-top: 25px;
+    border-top: 1px solid $border-color;
+    >h3 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: $light-text-color;
+    }
+    .posts {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 30px;
+      .post {
+        width: 50%;
+        display: inline-block;
+        padding: 0;
+        margin: 0;
+        .post-title {
+          @include text-truncate;
+          @include line-clamp-1;
+        }
+        .post-description {
+          @include text-truncate;
+          @include line-clamp-3;
+        }
+        &:last-child {
+          margin-left: 15px;
+        }
+      }
+    }
+  }
+  .post-content-sections {
+    width: 200px;
+    position: fixed;
+    top: 165px;
+    right: 60px;
+
+    .section {
+      margin-bottom: 30px;
+      .section-nav {
+        padding: 10px 0;
+        .toc-entry {
+          list-style: none;
+          font-size: 13px;
+          margin-bottom: 8px;
+          ul {
+            padding-left: 20px;
+          }
+          a {
+            text-decoration: none;
+            color: $light-text-color;
+            padding: 2px 2px 2px 18px;
+            @include text-truncate;
+            @include line-clamp-1;
+            &:hover {
+              color: $body-text-color;
+            }
+            &.active {
+              color: $body-text-color;
+              font-weight: 600;
+              border-left: 2px solid $body-text-color;
+              padding-left: 16px;
+            }
+          }
+        }
+      }
+    }
+    #scrollToTop,
+    #scrollToBottom {
+      font-size: 12px;
+      display: block;
+      padding: 5px 0 0 20px;
+      cursor: pointer;
+      color: $light-text-color;
+
+      &:hover {
+        color: $body-text-color;
+      }
+    }
+  }
+}
+
+.post {
+  background-color: $content-bg-color;
+  padding: 15px 20px;
+  margin-top: 30px;
+  border-radius: 3px;
+  .content {
+    a {
+      text-decoration: none;
+      .post-title {
+        font-size: 1.3rem;
+        font-weight: 600;
+        margin-bottom: 0.6rem;
+      }
+      .post-description {
+        font-size: 1rem;
+        color: $description-text-color;
+      }
+    }
+  }
+}
+
+.post-info {
+  display: flex;
+  align-items: center;
+  .avatar {
+    width: 25px;
+    border-radius: 50%;
+    margin-right: 5px;
+    border: 2px solid $border-color;
+  }
+  .published-date {
+    color: $light-text-color;
+    font-size: 12px;
+    margin-top: 10px;
+  }
+}
+
+@include medium {
+  .post {
+    margin-top: 20px;
+  }
+  .layout-post {
+    .sidebar {
+      width: 100%;
+      position: relative;
+      height: auto;
+      .user {
+        display: none;
+      }
+    }
+    .page-content {
+      width: 100%;
+    }
+    .site-footer {
+      width: 100%;
+    }
+  }
+}
+
+@include small {
+  .post {
+    .post-description {
+      @include text-truncate;
+      @include line-clamp-3;
+    }
+  }
+  .layout-post {
+    .sidebar {
+      .user {
+        display: none;
+      }
+    }
+  }
+}

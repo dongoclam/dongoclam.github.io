@@ -1,0 +1,19 @@
+---
+layout: home
+---
+
+<div class="categories">
+  <div class="nav-tabs">
+    <a class="tab-item" href="/">
+      <span>Posts</span>
+      <span id="post-count" class="count">{{ site.posts | size }}</span>
+    </a>
+    <a class="tab-item active" href="/categories.html">
+      <span>Categories</span>
+      <span id ="category-count" class="count">{{ site.categories | size }}</span>
+    </a>
+  </div>
+  {% for category in site.categories %}
+    {% include partials/category.html %}
+  {% endfor %}
+</div>

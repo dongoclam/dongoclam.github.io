@@ -1,0 +1,54 @@
+.tag-page {
+  .tag-content {
+    .tag-page-title {
+      display: flex;
+      align-items: center;
+      .tag-image {
+        height: 25px;
+        margin-right: 5px;
+      }
+    }
+  }
+}
+
+.tags {
+  .tag {
+    font-size: 0.8rem;
+    display: inline-block;
+    padding: 1px 6px;
+    border-radius: 3px;
+    text-decoration: none;
+    color: $main-text-color;
+    background-color: $tag-bg-color;
+    margin-right: 3px;
+  }
+}
+
+@include medium {
+  .layout-tag {
+    .sidebar {
+      width: 100%;
+      position: relative;
+      height: auto;
+      .user {
+        display: none;
+      }
+    }
+    .page-content {
+      width: 100%;
+    }
+    .site-footer {
+      width: 100%;
+    }
+  }
+}
+
+@include small {
+  .layout-tag {
+    .sidebar {
+      .user {
+        display: none;
+      }
+    }
+  }
+}

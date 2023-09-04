@@ -1,0 +1,43 @@
+---
+layout: home
+---
+
+<div class="home-page">
+  <div id="navbar" class="nav-tabs">
+    <a class="tab-item active" href="javascript:void(0)" data-target="tab-posts">
+      <span>Posts</span>
+      <span id="post-count" class="count">{{ site.posts | size }}</span>
+    </a>
+    <a class="tab-item" href="javascript:void(0)" data-target="tab-categories">
+      <span>Categories</span>
+      <span id="category-count"  class="count">{{ site.categories | size }}</span>
+    </a>
+  </div>
+  <div class="search-box">
+    <img src="assets/image/search.webp" alt="search">
+    <input id="search-input" type="text" placeholder="Search...">
+  </div>
+  <div class="tab-contents">
+    <div id="tab-posts" class="tab-content active">
+      {% for post in site.posts %}
+        {% include partials/post.html %}
+      {% endfor %}
+      <div class="no-result-found hidden">
+        <img src="assets/image/no-result-found.svg" alt="no-result-found"/>
+        <p>No results</p>
+      </div>
+    </div>
+    <div id="tab-categories" class="tab-content">
+      {% for category in site.categories %}
+        {% include partials/category.html %}
+      {% endfor %}
+      <div class="no-result-found hidden">
+        <img src="assets/image/no-result-found.svg" alt="no-result-found"/>
+        <p>No results</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>window.collections = {{ site.data["collections"] | jsonify }}</script>
+<script src="assets/javascript/home.js"></script>

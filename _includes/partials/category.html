@@ -1,0 +1,6 @@
+<div class="category" data-id="{{ category | first }}">
+  <h2>{{ category | first }}</h2>
+  {% for post in category.last %}
+    {% include partials/post.html %}
+  {% endfor %}
+</div>
